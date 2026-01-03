@@ -20,7 +20,7 @@ hero:
 
 features:
   - title: Feature A
-    details: 特征1
+    details: 特征1.
     link: /api-examples
   - title: Feature B
     details: 特征2
