@@ -19,6 +19,13 @@ const isDirectory = (path) => fs.lstatSync(path).isDirectory();
 const intersections = (arr1, arr2) =>
 	Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))));
 
+// 【新增】从文件名中提取排序数字（核心排序逻辑）
+const extractSortNumber = (fileName) => {
+	// 匹配文件名开头的数字（如 "1.xxx.md" → 1，"10.xxx.md" → 10，"xxx2.xxx.md" → 0）
+	const match = fileName.match(/^(\d+)/);
+	return match ? parseInt(match[1], 10) : 0; // 无数字则默认排最后
+};
+
 // 把方法导出直接使用
 function getList(params, path1, pathname) {
 	// 存放结果
@@ -48,13 +55,27 @@ function getList(params, path1, pathname) {
 			res.push({
 				text: name,
 				link: `${pathname}/${name}`,
+				// 【新增】给每个条目添加排序数字（用于后续排序）
+				sortNum: extractSortNumber(name),
 			});
 		}
 	}
 	// 对name做一下处理，把后缀删除
-	res.map((item) => {
+	res.forEach((item) => {
 		item.text = item.text.replace(/\.md$/, '');
 	});
+
+	// 【核心新增】排序逻辑
+	res.sort((a, b) => {
+		// 1. 文件夹优先排在前面（可选，根据需求调整）
+		if (a.items && !b.items) return -1; // a是文件夹，b是文件 → a在前
+		if (!a.items && b.items) return 1; // a是文件，b是文件夹 → b在前
+		// 2. 都是文件：按提取的数字升序排序
+		if (!a.items && !b.items) return a.sortNum - b.sortNum;
+		// 3. 都是文件夹：按文件夹名称升序（可选，也可加文件夹排序逻辑）
+		return a.text.localeCompare(b.text, 'zh-CN'); // 中文文件夹按拼音排序
+	});
+
 	return res;
 }
 

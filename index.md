@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "一个菜鸟的学习笔记"
-  text: ""
+  text: "📝"
   tagline: 有志者，事竟成
   image:
     src: /background.png
@@ -19,12 +19,21 @@ hero:
       link: https://colour008.eu.org/
 
 features:
-  - title: Feature A
-    details: 特征1.
-    link: /api-examples
-  - title: Feature B
-    details: 特征2
-  - title: Feature C
-    details: 特征3
+  - title: Windows 学习笔记
+    details: 🖥️
+    link: /windows/index.md
+  - title: Linux 学习笔记
+    details: ⌨️
+    link: /linux/index.md
+  - title: 网络学习笔记
+    details: 🌐
+    link: /net/index.md
+  - title: 编程学习笔记
+    details: 🧑🏻‍💻
+    link: /code/index.md
+  - title: 其他学习笔记
+    details: 🖨️
+    link: other/index.md
+
 ---
 

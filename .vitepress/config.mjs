@@ -1,13 +1,20 @@
 import { defineConfig } from 'vitepress';
-import { set_sidebar } from './utils/auto_sidebar.mjs'; // 改成自己的路径
+import { set_sidebar } from './utils/auto_sidebar.mjs';
+import dayjs from 'dayjs';
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	// 1. 站点基础配置（可选，建议设置）
 	lang: 'zh-CN', // 站点语言标识
 	head: [['link', { rel: 'icon', href: '/logo.png' }]],
 	title: 'JamHoo的笔记',
-	description: '我的个人文档站点',
-
+	description: '我的个人笔记站点',
+	lastUpdated: {
+		// 自定义时间格式化函数
+		format: (time) => {
+			return dayjs(time).format('YYYY年MM月DD日 HH:mm');
+		},
+	},
 	// 2. 主题配置（核心：设置中文 locale）
 	themeConfig: {
 		outlineTitle: '本页目录',
@@ -19,6 +26,7 @@ export default defineConfig({
 			{ text: 'Windows', link: '/windows/' },
 			{ text: 'Linux', link: '/linux/' },
 			{ text: '网络', link: '/net/' },
+			{ text: '编程', link: '/code/' },
 			{ text: '其他', link: '/other/' },
 			{
 				text: '友情链接',
@@ -33,6 +41,7 @@ export default defineConfig({
 			'/windows': set_sidebar('/windows'),
 			'/net': set_sidebar('/net'),
 			'/other': set_sidebar('/other'),
+			'/code': set_sidebar('/code'),
 		},
 		// sidebar: false, // 关闭侧边栏
 		// aside: 'left', // 设置右侧侧边栏在左侧显示
@@ -93,8 +102,19 @@ export default defineConfig({
 
 		// 移动端 - 返回顶部
 		returnToTopLabel: '返回顶部',
+		// 最后更新时间
 
 		// 移动端 - menu
 		sidebarMenuLabel: '菜单',
+		editLink: {
+			// 1. 编辑链接的基础 URL（替换为你的仓库地址）
+			// 格式：仓库地址 + 分支 + 文档根目录
+			pattern: 'https://github.com/colour008/docs/main/:path',
+			// 2. 按钮文字（可选，默认是「Edit this page」）
+			text: '在 GitHub 上编辑此页面',
+			// 3. 是否在主页（README.md）显示（可选，默认 true）
+			// home: false
+		},
+		lastUpdatedText: '最后更新于',
 	},
 });
