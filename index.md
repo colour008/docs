@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "JamHoo的知识库"
-  text: "一个文档站点"
+  name: "一个菜鸟的学习笔记"
+  text: ""
   tagline: 有志者，事竟成
   image:
     src: /background.png
@@ -12,11 +12,11 @@ hero:
 
   actions:
     - theme: brand
+      text: 进入目录
+      link: /README.md
+    - theme: alt
       text: 我的博客
       link: https://colour008.eu.org/
-    - theme: alt
-      text: 进入文档
-      link: /api-examples
 
 features:
   - title: Feature A
