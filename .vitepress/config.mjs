@@ -10,11 +10,15 @@ export default defineConfig({
 	title: 'JamHoo的笔记',
 	description: '我的个人笔记站点',
 	lastUpdated: {
-		// 自定义时间格式化函数
-		format: (time) => {
-			return dayjs(time).format('YYYY年MM月DD日 HH:mm');
-		},
-	},
+    // 原生 Date 格式化函数
+    format: (time) => {return new Date(time).toLocaleString('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false})
+    },
 	// 2. 主题配置（核心：设置中文 locale）
 	themeConfig: {
 		outlineTitle: '本页目录',
