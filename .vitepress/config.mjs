@@ -27,7 +27,7 @@ export default defineConfig({
 
 	// 2. 主题配置（核心：设置中文 locale）
 	themeConfig: {
-		outlineTitle: '本页目录',
+		outlineTitle: '页面导航',
 		outline: [2, 6],
 		logo: '/logo.png', // 配置logo位置，public目录
 		// https://vitepress.dev/reference/default-theme-config
