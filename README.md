@@ -2,11 +2,11 @@
 
 > 你好
 
--   [1. Windows 学习笔记 🖥️](windows/windows/index.md)
+-   [1. Windows 学习笔记 🖥️](windows/index.md)
 
 ------
 
--   [2. Linux 学习笔记 ⌨️](linux/linux/index.md)
+-   [2. Linux 学习笔记 ⌨️](linux/index.md)
 
 ------
 
