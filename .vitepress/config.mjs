@@ -119,7 +119,7 @@ export default defineConfig({
 		editLink: {
 			// 1. 编辑链接的基础 URL（替换为你的仓库地址）
 			// 格式：仓库地址 + 分支 + 文档根目录
-			pattern: 'https://github.com/colour008/docs/main/:path',
+			pattern: 'https://github.com/colour008/docs/tree/main/:path',
 			// 2. 按钮文字（可选，默认是「Edit this page」）
 			text: '在 GitHub 上编辑此页面',
 			// 3. 是否在主页（README.md）显示（可选，默认 true）

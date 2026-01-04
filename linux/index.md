@@ -1,3 +1,7 @@
+---
+lastUpdated: false
+---
+
 # 笔记目录 📑
 ------
 <img alt="Static Badge" src="https://img.shields.io/badge/Colourflare-page-orange?logo=cloudflare">
