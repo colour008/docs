@@ -115,7 +115,7 @@ export default defineConfig({
 		// 最后更新时间
 
 		// 移动端 - menu
-		sidebarMenuLabel: '菜单',
+		sidebarMenuLabel: '笔记目录',
 		editLink: {
 			// 1. 编辑链接的基础 URL（替换为你的仓库地址）
 			// 格式：仓库地址 + 分支 + 文档根目录
