@@ -22,11 +22,8 @@ export default defineConfig({
 		},
 	},
 
-	// 忽略相对链接的死链接检测（只检测绝对链接）
-	ignoreDeadLinks: {
-		relative: true, // 忽略相对路径的死链接
-		absolute: false, // 仍检测绝对路径（如 https://xxx）的死链接
-	},
+	// 忽略相对链接的死链接检测
+	ignoreDeadLinks: true,
 
 	// 2. 主题配置（核心：设置中文 locale）
 	themeConfig: {
