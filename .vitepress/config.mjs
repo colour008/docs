@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress';
 import { set_sidebar } from './utils/auto_sidebar.mjs';
-import dayjs from 'dayjs';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
