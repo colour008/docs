@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress';
 import { set_sidebar } from './utils/auto_sidebar.mjs';
 
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	// 1. 站点基础配置（可选，建议设置）
@@ -106,6 +107,9 @@ export default defineConfig({
 			prev: '上一篇',
 			next: '下一篇',
 		},
+
+		darkModeSwitchTitle: '切换深色模式',
+		lightModeSwitchTitle: '切换浅色模式',
 
 		// 移动端 - 外观
 		darkModeSwitchLabel: '切换明暗主题',

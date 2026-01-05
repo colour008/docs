@@ -2,17 +2,17 @@
 .readme-page {
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 40px 20px; /* 增大上下内边距，让页面更舒展 */
+	padding: 35px 15px; /* 增大上下内边距，让页面更舒展 */
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		sans-serif; /* 现代无衬线字体 */
 	color: #333;
-	line-height: 1.8;
+	line-height: 1.4;
 }
 
 /* 标题美化：增加层次感+细节 */
 .readme-page h1 {
 	text-align: center;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: 600;
 	color: #2d3748; /* 深灰更高级 */
 	margin-bottom: 40px;
@@ -23,7 +23,7 @@
 	content: '';
 	display: block;
 	width: 260px;
-	height: 2px;
+	height: 1px;
 	background: #4299e1; /* 淡蓝主色调 */
 	margin: 12px auto 0;
 	border-radius: 2px;
@@ -38,8 +38,8 @@
 }
 .readme-page ul li {
 	background: #ffffff;
-	padding: 20px 24px;
-	margin-bottom: 16px;
+	padding: 16px 24px;
+	margin-bottom: 12px;
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 轻阴影增加层次感 */
 	transition: all 0.3s ease; /* 过渡动画 */
@@ -56,7 +56,7 @@
 	text-decoration: none;
 	font-weight: 500;
 	position: relative;
-	font-size: 25px;
+	font-size: 20px;
 }
 .readme-page a::after {
 	content: '';
@@ -73,9 +73,9 @@
 }
 
 /* 页脚隐藏+版权信息美化 */
-.readme-page .VPDocFooter {
+/* .readme-page .VPDocFooter {
 	display: none;
-}
+} */
 .readme-page footer {
 	text-align: center;
 	margin-top: 60px;
@@ -100,7 +100,7 @@
 .readme-page blockquote > p {
 	margin: 0;
 	transition: color 0.5s;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 /* ========== 核心：适配 VitePress 明暗主题切换按钮 ========== */
