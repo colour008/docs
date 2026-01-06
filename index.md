@@ -15,8 +15,8 @@ hero:
       text: 进入目录
       link: /README.md
     - theme: alt
-      text: 我的博客
-      link: https://colour008.eu.org/
+      text: 关于我🙈
+      link: /aboutme.md
 
 features:
   - title: Windows 学习笔记
