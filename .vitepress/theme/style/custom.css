@@ -133,3 +133,32 @@ html.dark .readme-page footer {
 html.dark .readme-page blockquote {
 	color: #e6f3fd;
 }
+
+.aboutme-page {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 35px 15px; /* 增大上下内边距，让页面更舒展 */
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		sans-serif; /* 现代无衬线字体 */
+	color: #333;
+	line-height: 1.4;
+}
+
+/* 图标容器：水平居中 + 内部元素行内排列 */
+.aboutme-page .icons-container {
+	display: block; /* 确保容器是块级元素 */
+	text-align: center; /* 让容器内的行内元素水平居中 */
+	margin: 20px 0; /* 可选：增加容器上下间距，视觉更美观 */
+}
+
+.aboutme-page p.icons-container img {
+	display: inline-block; /* 强制图片为行内块元素 */
+	margin: 0 8px; /* 可选：增加图标之间的间距 */
+	vertical-align: middle; /* 可选：让图标垂直居中对齐 */
+}
+
+/* 取消右侧 .spacer 的 flex 挤压 */
+.aboutme-page .aside {
+	width: 0;
+	max-width: 0px !important; /* 覆盖默认的 flex-grow:1 */
+}

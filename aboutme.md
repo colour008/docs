@@ -1,16 +1,10 @@
-# Hi ，我是JamHoo!<img align ='center' src='https://bu.dusays.com/2026/01/06/695d08c047adb.gif' width ='50' />
+---
+pageClass: aboutme-page
+---
+
+### 关于我
 
 ----
-
-<p align="center">
-<a href="https://colour008.eu.org" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@16.4.0/icons/hexo.svg" alt="blog" height="50" width="50" />我的博客</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://colour008.de5.net" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@16.4.0/icons/vitepress.svg" alt="study notes" height="50" width="50" />学习笔记</a>&nbsp;
-</p>
-
-
-----
-
-### <img src="https://bu.dusays.com/2026/01/06/695d09164c133.gif" alt="Developer" width="45"/>关于我
 
 - 👨‍💻 一名沉迷**计算机 + 网络通信 + 编程 + 软硬件**知识的野生菜鸟选手
 - 🖥️ 日常和 **Linux** 死磕，跟 **VitePress** 较劲，代码写得全靠注释续命
@@ -20,7 +14,7 @@
 - ⚡ 冷知识：能看懂设备指示灯闪烁，就觉得自己离大佬又近了一步
 - 🧑‍💻 正在学习中 :
 
-<p align="center">
+<p align="center" class="icons-container">
       <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" alt="microsoft" width="55" height="55"/>&nbsp;&nbsp;
       <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="linux" width="65" height="65"/>&nbsp;&nbsp;
       <img src="https://www.vectorlogo.zone/logos/centos/centos-icon.svg" alt="centos" width="65" height="65"/>&nbsp;&nbsp;
@@ -30,8 +24,17 @@
       <img src="https://www.vectorlogo.zone/logos/dnsnetworksca/dnsnetworksca-ar21~bgwhite.svg" alt="Net" width="60" height="50"/>
 </p>
 
+
 ---
 
-### <img src="https://bu.dusays.com/2026/01/06/695d0c86eb5d5.gif" alt="hmm" width ='29'/> 人生格言
+### 人生格言
 
 * <span style="font-style:italic; text-decoration:underline; color:#0066CC;">有志者，事竟成！— Where there's a will, there's a way!</span>
+
+----
+
+### 我的博客
+
+<p align="center" class="icons-container">
+<a href="https://colour008.eu.org" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@16.4.0/icons/hexo.svg" alt="blog" height="50" width="50" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
