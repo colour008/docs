@@ -28,12 +28,10 @@
       <img src="https://www.vectorlogo.zone/logos/docker/docker-official.svg" alt="docker" width="60" height="50"/>&nbsp;&nbsp;
       <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="GIT" width="55" height="55"/>&nbsp;&nbsp;
       <img src="https://www.vectorlogo.zone/logos/dnsnetworksca/dnsnetworksca-ar21~bgwhite.svg" alt="Net" width="60" height="50"/>
-
+</p>
 
 ---
-
 
 ### <img src="https://bu.dusays.com/2026/01/06/695d0c86eb5d5.gif" alt="hmm" width ='29'/> 人生格言
 
 * <span style="font-style:italic; text-decoration:underline; color:#0066CC;">有志者，事竟成！— Where there's a will, there's a way!</span>
-
