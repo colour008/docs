@@ -1,0 +1,75 @@
+/* .vitepress/theme/customStyles.css */
+#custom-back-to-top {
+	/* 基础样式：改成圆形按钮，适配 emoji */
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 50px;
+	height: 50px;
+	background: #fffef3; /* 清新的蓝色，适配 emoji 风格 */
+	color: #fff;
+	border-radius: 50%; /* 圆形按钮 */
+	cursor: pointer;
+	font-size: 40px; /* 放大 emoji 尺寸 */
+	box-shadow: 0 4px 12px rgba(47, 14, 59, 0.3); /* 柔和阴影，更有层次感 */
+	user-select: none;
+	transition: all 0.3s ease; /* 过渡更丝滑 */
+	opacity: 0.9;
+	z-index: 9999;
+	align-items: center;
+	justify-content: center;
+	display: none;
+	border: 1px solid #601e6a35; /* 去掉边框 */
+}
+
+/* hover 效果：轻微放大 + 加深阴影 + 提升透明度 */
+#custom-back-to-top:hover {
+	opacity: 1;
+	transform: translateY(-3px) scale(1.05); /* 上移+轻微放大 */
+	box-shadow: 0 6px 16px rgba(47, 14, 59, 0.3);
+}
+
+/* 点击按下效果 */
+#custom-back-to-top:active {
+	transform: translateY(-1px) scale(0.98); /* 轻微缩小，模拟按压 */
+}
+
+/* 桌面端样式（≥768px） */
+@media (min-width: 768px) {
+	#custom-back-to-top {
+		bottom: 40px;
+		right: 40px;
+		width: 55px;
+		height: 55px;
+		font-size: 22px;
+	}
+}
+
+/* 移动端样式（≤768px）：适配小屏，保证点击区域 */
+@media (max-width: 768px) {
+	#custom-back-to-top {
+		bottom: 20px;
+		right: 20px;
+		width: 45px;
+		height: 45px;
+		font-size: 18px;
+		box-shadow: 0 3px 10px rgba(47, 14, 59, 0.3);
+	}
+}
+
+/* 隐藏内置按钮 */
+.vp-back-to-top {
+	display: none !important;
+}
+
+/* 移动端额外优化 */
+@media (max-width: 768px) {
+	#custom-back-to-top {
+		/* 适配小屏手机，避免按钮超出可视区域 */
+		right: 15px;
+		bottom: 15px;
+		/* 增加点击区域，提升移动端触摸体验 */
+		min-width: 40px;
+		min-height: 40px;
+	}
+}

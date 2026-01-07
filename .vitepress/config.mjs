@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 import { set_sidebar } from './utils/auto_sidebar.mjs';
 
 
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	// 1. 站点基础配置（可选，建议设置）
@@ -116,7 +117,7 @@ export default defineConfig({
 
 		// 移动端 - 返回顶部
 		returnToTopLabel: '返回顶部',
-		// 最后更新时间
+
 
 		// 移动端 - menu
 		sidebarMenuLabel: '笔记目录',
