@@ -12,7 +12,7 @@ pageClass: aboutme-page
 - 🎯 热衷折腾各种技术小玩意儿，虽然经常翻车，但快乐永不打烊
 - 💬 聊**计算机网络**、**Linux 运维**、**编程趣事**都能唠，别问，问就是还在新手村练级
 - ⚡ 冷知识：能看懂设备指示灯闪烁，就觉得自己离大佬又近了一步
-- 🧑‍💻 正在学习中 :
+- 📖 正在学习中 :
 
 <p align="center" class="icons-container">
       <img src="https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg" alt="microsoft" width="55" height="55"/>&nbsp;&nbsp;
@@ -24,12 +24,6 @@ pageClass: aboutme-page
       <img src="https://www.vectorlogo.zone/logos/dnsnetworksca/dnsnetworksca-ar21~bgwhite.svg" alt="Net" width="60" height="50"/>
 </p>
 
-
----
-
-### 人生格言
-
-* <span style="font-style:italic; text-decoration:underline; color:#0066CC;">有志者，事竟成！— Where there's a will, there's a way!</span>
 
 ----
 
