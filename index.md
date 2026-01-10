@@ -34,6 +34,9 @@ features:
   - title: 其他学习笔记
     details: 🖨️
     link: other/index.md
+  - title: 我的第一个开源项目
+    details: 🎉
+    link: https://github.com/colour008/web-file-manager
 
 ---
 
