@@ -32,7 +32,6 @@ export default {
             <img
               src="/返回顶部.svg"
               alt="返回顶部"
-              style="width: 60%; height: 60%; object-fit: contain;"
             >
           `;
 
@@ -41,8 +40,8 @@ export default {
             position: fixed !important;
             bottom: 30px !important;
             right: 30px !important;
-            width: 50px !important;
-            height: 50px !important;
+            width: 40px !important;
+            height: 40px !important;
             background: transparent !important;
             display: none !important;
             align-items: center !important;
