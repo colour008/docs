@@ -3,10 +3,8 @@
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 35px 15px; /* 增大上下内边距，让页面更舒展 */
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		sans-serif; /* 现代无衬线字体 */
 	color: #333;
-	line-height: 1.4;
+	line-height: 1.3;
 }
 
 /* 标题美化：增加层次感+细节 */
@@ -138,8 +136,8 @@ html.dark .readme-page blockquote {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 35px 15px; /* 增大上下内边距，让页面更舒展 */
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		sans-serif; /* 现代无衬线字体 */
+	font-family:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* 现代无衬线字体 */
 	color: #333;
 	line-height: 1.4;
 }

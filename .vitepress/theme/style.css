@@ -1,47 +1,49 @@
-/**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
- */
+/* 苹方-简 极细体 */
+@font-face {
+	font-family: 'PingFangSC-Ultralight-woff2';
+	src: url('/fonts/PingFangSC-Ultralight.woff2') format('woff2');
+}
+/* 苹方-简 纤细体 */
+@font-face {
+	font-family: 'PingFangSC-Thin-woff2';
+	src: url('/fonts/PingFangSC-Thin.woff2') format('woff2');
+}
+/* 苹方-简 细体 */
+@font-face {
+	font-family: 'PingFangSC-Light-woff2';
+	src: url('/fonts/PingFangSC-Light.woff2') format('woff2');
+}
+/* 苹方-简 常规体 */
+@font-face {
+	font-family: 'PingFangSC-Regular-woff2';
+	src: url('/fonts/PingFangSC-Regular.woff2') format('woff2');
+}
+/* 苹方-简 中黑体 */
+@font-face {
+	font-family: 'PingFangSC-Medium-woff2';
+	src: url('/fonts/PingFangSC-Medium.woff2') format('woff2');
+}
+/* 苹方-简 中粗体 */
+@font-face {
+	font-family: 'PingFangSC-Semibold-woff2';
+	src: url('/fonts/PingFangSC-Semibold.woff2') format('woff2');
+}
 
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
+/* Fira Code 等宽字体 */
+@font-face {
+	font-family: 'Fira Code';
+	src:
+		url('/fonts/FiraCode-Regular.woff2') format('woff2'),
+		url('/fonts/FiraCode-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* Maple Mono 等宽字体 */
+@font-face {
+	font-family: 'Maple Mono';
+	src: url('/fonts/MapleMonoNormal-NF-CN-Regular.woff2') format('woff2');
+}
 
 :root {
 	--vp-c-default-1: var(--vp-c-gray-1);
@@ -177,6 +179,21 @@
 	border: none;
 }
 
+/* 去掉所有链接的下划线 */
+.vp-doc a {
+	text-decoration: none !important;
+}
+
+/* 使用自定义字体 */
+:root {
+	--vp-font-family-base:
+		'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Inter', sans-serif;
+
+	--vp-font-family-mono:
+		'Maple Mono', 'Fira Code', 'Courier New', Courier, monospace;
+}
+
 /* 核心：仅针对 shiki + vp-code 类的 pre 标签，强制溢出显示滚动条 */
 pre.shiki.shiki-themes.github-light.github-dark.vp-code {
 	/* 1. 确保内容溢出时触发滚动，且不换行 */
@@ -217,4 +234,3 @@ pre.shiki.shiki-themes.github-light.github-dark.vp-code {
 pre.shiki.shiki-themes.github-light.github-dark.vp-code {
 	-ms-overflow-style: scrollbar !important; /* 禁用沉浸式滚动条 */
 }
-

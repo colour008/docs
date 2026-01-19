@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme';
 import './style.css';
 import './custom.css';
 
+
 /** @type {import('vitepress').Theme} */
 export default {
 	extends: DefaultTheme,
@@ -52,7 +53,7 @@ export default {
             transition: all 0.3s ease !important;
             pointer-events: auto !important;
             transform: translateZ(9999px) !important;
-          `;
+    `;
 
 					// 2. 媒体查询适配逻辑（JS 代码，写在 cssText 外面）
 					const mediaQuery = window.matchMedia('(max-width: 768px)');

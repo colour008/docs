@@ -1,7 +1,6 @@
 import { defineConfig } from 'vitepress';
 import { set_sidebar } from './utils/auto_sidebar.mjs';
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
 	// 1. 站点基础配置（可选，建议设置）
 	lang: 'zh-CN', // 站点语言标识
@@ -21,7 +20,12 @@ export default defineConfig({
 			});
 		},
 	},
-
+	markdown: {
+		theme: {
+			light: 'light-plus', // 浅色主题
+			dark: 'dark-plus', // 深色主题
+		},
+	},
 	// 忽略相对链接的死链接检测
 	ignoreDeadLinks: true,
 

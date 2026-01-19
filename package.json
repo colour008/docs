@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@shikijs/markdown-it": "^3.21.0",
     "vitepress": "^1.6.4"
   },
   "scripts": {
