@@ -1,14 +1,12 @@
 import { defineConfig } from 'vitepress';
 import { set_sidebar } from './utils/auto_sidebar.mjs';
 
-
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	// 1. 站点基础配置（可选，建议设置）
 	lang: 'zh-CN', // 站点语言标识
 	head: [['link', { rel: 'icon', href: '/logo.png' }]],
-	title: 'JamHoo的笔记',
+	title: 'colour008的笔记',
 	description: '我的个人笔记站点',
 	lastUpdated: {
 		// 原生 Date 格式化函数
@@ -78,7 +76,7 @@ export default defineConfig({
 
 		//底部配置
 		footer: {
-			copyright: 'Copyright © 2026 JamHoo',
+			copyright: 'Copyright © 2026 colour008',
 		},
 		// 设置搜索框的样式
 		search: {
@@ -117,7 +115,6 @@ export default defineConfig({
 
 		// 移动端 - 返回顶部
 		returnToTopLabel: '返回顶部',
-
 
 		// 移动端 - menu
 		sidebarMenuLabel: '笔记目录',

@@ -4,7 +4,6 @@ import DefaultTheme from 'vitepress/theme';
 import './style.css';
 import './custom.css';
 
-
 /** @type {import('vitepress').Theme} */
 export default {
 	extends: DefaultTheme,
@@ -27,7 +26,15 @@ export default {
 					// 创建按钮
 					const btn = document.createElement('div');
 					btn.id = 'force-back-to-top';
-					btn.innerText = '🔝';
+
+					// 替换：使用自定义图片（核心修改处）
+					btn.innerHTML = `
+            <img
+              src="/返回顶部.svg"
+              alt="返回顶部"
+              style="width: 60%; height: 60%; object-fit: contain;"
+            >
+          `;
 
 					// 1. 基础样式（仅 CSS，无 JS）
 					btn.style.cssText = `
@@ -36,18 +43,13 @@ export default {
             right: 30px !important;
             width: 50px !important;
             height: 50px !important;
-            background: #fffef3 !important;
-            color: #601e6a !important;
-            border-radius: 50% !important;
-            font-size: 20px !important;
+            background: transparent !important;
             display: none !important;
             align-items: center !important;
             justify-content: center !important;
             z-index: 9999999 !important;
             cursor: pointer !important;
             opacity: 0.9 !important;
-            border: 1px solid #601e6a35 !important;
-            box-shadow: 0 4px 12px rgba(47, 14, 59, 0.3) !important;
             transition: all 0.3s ease !important;
             pointer-events: auto !important;
             transform: translateZ(9999px) !important;
@@ -62,14 +64,12 @@ export default {
 							btn.style.right = '15px !important';
 							btn.style.width = '45px !important';
 							btn.style.height = '45px !important';
-							btn.style.fontSize = '18px !important';
 						} else {
 							// 桌面端样式（覆盖基础样式）
 							btn.style.bottom = '40px !important';
 							btn.style.right = '40px !important';
 							btn.style.width = '55px !important';
 							btn.style.height = '55px !important';
-							btn.style.fontSize = '22px !important';
 						}
 					};
 					// 初始化适配 + 监听窗口大小变化
@@ -127,5 +127,4 @@ export default {
 			},
 		});
 	},
-
 };
