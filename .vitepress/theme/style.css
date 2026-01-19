@@ -39,12 +39,6 @@
 	font-style: normal;
 }
 
-/* Maple Mono 等宽字体 */
-@font-face {
-	font-family: 'Maple Mono';
-	src: url('/fonts/MapleMonoNormal-NF-CN-Regular.woff2') format('woff2');
-}
-
 :root {
 	--vp-c-default-1: var(--vp-c-gray-1);
 	--vp-c-default-2: var(--vp-c-gray-2);
