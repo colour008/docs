@@ -20,8 +20,6 @@ pageClass: aboutme-page
 </p>
 
 
-----
-
 ## 我的博客
 
 <p align="center" class="icons-container">
