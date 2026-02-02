@@ -1,5 +1,5 @@
 /* ==========================================
-   1. 字体声明
+   1. 字体声明 (已合并去重)
    ========================================== */
 @font-face {
     font-family: 'PingFangSC-Ultralight-woff2';
@@ -33,88 +33,114 @@
 
 @font-face {
     font-family: 'Fira Code';
-    src: url('/fonts/FiraCode-Regular.woff2') format('woff2'), url('/fonts/FiraCode-Regular.woff') format('woff');
+    src: url('/fonts/FiraCode-Regular.woff2') format('woff2'),
+    url('/fonts/FiraCode-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 /* ==========================================
-   2. 基础变量 (Indigo 主色 & Dracula 暗色)
+   2. 基础变量 (以 custom.css 为准)
    ========================================== */
 :root {
+    /* Indigo 主色 */
     --vp-c-brand-1: var(--vp-c-indigo-1);
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-3);
     --vp-c-brand-soft: var(--vp-c-indigo-soft);
 
-    --vp-font-family-base: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
-    --vp-font-family-mono: 'Fira Code', 'PingFang SC', monospace;
+    /* 字体族 */
+    --vp-font-family-base: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --vp-font-family-mono: 'Fira Code', 'PingFang SC', 'Courier New', Courier, monospace;
 
-    /* Dracula 核心变量 */
+    /* Dracula 德古拉色值定义 */
     --dracula-bg: #282a36;
     --dracula-selection: #44475a;
     --dracula-comment: #6272a4;
+    --dracula-fg: #f8f8f2;
+
+    /* 布局变量 */
+    --vp-sidebar-width: 420px;
+    --vp-layout-max-width: 1600px;
+    --vp-nav-height: 64px;
+
+    /* 侧边栏背景色修复：亮色模式使用纯白或浅灰色 */
+    --vp-sidebar-bg-color: #ffffff;
+}
+
+/* 暗色模式下的侧边栏背景色 */
+.dark {
+    --vp-sidebar-bg-color: #1b1b1f;
 }
 
 /* ==========================================
-   3. Dracula 代码块 & 鼠标移入显示滚动条
+   3. 代码块样式 (Dracula 主题 & 交互优化)
    ========================================== */
 
-/* 容器基础 */
-.vp-doc div[class*="language-"] {
+/* 容器基础：覆盖 VitePress 默认代码块 */
+.vp-doc div[class*="language-"],
+pre.shiki {
     background-color: var(--dracula-bg) !important;
-    border-radius: 12px !important;
-    margin: 16px 0 !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 8px !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    position: relative !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+    /* 左右边距调小，增加显示面积 */
+    margin: 20px 8px !important;
+    overflow: hidden !important;
 }
 
-/* 代码区域：强制横向溢出 */
-.vp-doc [class*="language-"] pre {
-    background-color: transparent !important;
-    padding: 20px !important;
+/* 代码内容区域 */
+.vp-doc [class*="language-"] pre,
+pre.shiki {
+    /* padding 缩小，让代码更靠边，留出更多显示空间 */
+    padding: 25px 5px !important;
     margin: 0 !important;
-    overflow-x: auto !important;
+    background-color: transparent !important;
     white-space: pre !important;
     word-break: normal !important;
+    overflow-x: auto !important;
+    scrollbar-gutter: stable !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
 }
 
-/* --- Chrome/Safari/Edge 滚动条逻辑 --- */
-
-/* 1. 默认隐藏滚动条滑块 (透明) */
-.vp-doc [class*="language-"] pre::-webkit-scrollbar-thumb {
-    background-color: transparent !important;
-    border-radius: 10px !important;
-    border: 3px solid transparent !important;
+/* copy code按钮大小调整 */
+.vp-doc [class*='language-'] > button.copy {
+    width: 20px !important;
+    height: 20px !important;
+    border: none !important;
+    top: 25px !important;
 }
 
-/* 2. 鼠标移入容器时显示滚动条滑块 */
-.vp-doc div[class*="language-"]:hover pre::-webkit-scrollbar-thumb {
-    background-color: var(--dracula-selection) !important;
-    border: 3px solid var(--dracula-bg) !important; /* 制造空隙感 */
-}
-
-/* 3. 鼠标悬停在滑块上时加深颜色 */
-.vp-doc div[class*="language-"] pre::-webkit-scrollbar-thumb:hover {
-    background-color: var(--dracula-comment) !important;
-}
-
-/* 4. 滚动条轨道始终保持一致背景 */
+/* --- 滚动条逻辑：平时隐藏，Hover显示 (Chrome/Safari/Edge) --- */
 .vp-doc [class*="language-"] pre::-webkit-scrollbar {
-    height: 12px !important; /* 稍微调宽一点，方便鼠标点击 */
+    height: 10px !important;
     display: block !important;
 }
 
-.vp-doc [class*="language-"] pre::-webkit-scrollbar-track {
-    background: transparent !important;
+.vp-doc [class*="language-"] pre::-webkit-scrollbar-thumb {
+    background-color: transparent !important; /* 默认隐藏 */
+    border-radius: 5px !important;
+    border: 2px solid transparent !important;
 }
 
-/* --- Firefox 兼容逻辑 --- */
+.vp-doc div[class*="language-"]:hover pre::-webkit-scrollbar-thumb {
+    background-color: var(--dracula-selection) !important;
+    border: 2px solid var(--dracula-bg) !important;
+}
+
+.vp-doc [class*="language-"] pre::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dracula-comment) !important;
+}
+
+.vp-doc [class*="language-"] pre::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+/* Firefox 滚动条兼容 */
 .vp-doc [class*="language-"] pre {
     scrollbar-width: thin;
-    scrollbar-color: transparent transparent; /* 默认透明 */
-    transition: scrollbar-color 0.3s ease;
+    scrollbar-color: transparent transparent;
 }
 
 .vp-doc div[class*="language-"]:hover pre {
@@ -124,7 +150,6 @@
 /* 语言标签与复制按钮 */
 .vp-doc [class*="language-"]::before {
     color: var(--dracula-comment) !important;
-    top: 10px;
     right: 15px;
 }
 
@@ -133,16 +158,15 @@
 }
 
 /* ==========================================
-   4. 侧边栏及其他布局 (保持原有逻辑)
+   4. 侧边栏 (Sidebar) 优化
    ========================================== */
-:root {
-    --vp-sidebar-width: 420px;
-    --vp-layout-max-width: 1600px;
-    --vp-nav-height: 64px;
+.VPSidebar {
+    background-color: var(--vp-sidebar-bg-color) !important;
 }
 
-.VPSidebar {
-    background-color: transparent !important;
+.VPSidebarItem.level-1 .text {
+    margin: 4px 0 !important;
+    font-size: 14px !important;
 }
 
 .VPSidebarItem.level-1 .items {
@@ -152,13 +176,15 @@
 
 .VPSidebarItem .link {
     display: flex !important;
+    align-items: center;
     margin-left: -1px !important;
     border-left: 1px solid transparent !important;
-    font-size: 13px;
-    color: var(--vp-c-text-2) !important;
-    transition: all 0.25s ease !important;
     border-right: solid 1px #cbcbcb !important;
     padding-right: 25px !important;
+    font-size: 13px;
+    color: var(--vp-c-text-2) !important;
+    text-decoration: none !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .VPSidebarItem .link:hover {
@@ -175,7 +201,13 @@
     font-weight: 600 !important;
 }
 
-/* 响应式对齐 */
+/* ==========================================
+   5. 布局与响应式 (Layout)
+   ========================================== */
+.VPDoc .container {
+    margin: 0 !important;
+}
+
 @media (min-width: 960px) {
     .VPDoc .container {
         display: flex !important;
@@ -186,6 +218,14 @@
     .VPDoc .content {
         padding: 8px 30px 60px !important;
         max-width: 100% !important;
+    }
+
+    .VPDoc:not(.has-sidebar) .content {
+        max-width: 1552px !important;
+    }
+
+    .VPSidebar {
+        background-color: var(--vp-sidebar-bg-color) !important;
     }
 }
 
@@ -200,10 +240,130 @@
         top: 0;
         padding-top: calc(var(--vp-nav-height) + 20px) !important;
         height: 100vh;
+        overflow-y: auto;
     }
 }
 
-/* 返回顶部样式 */
+/* ==========================================
+   6. 右侧大纲 (Outline)
+   ========================================== */
+.VPDocAsideOutline li ul {
+    display: none !important;
+    padding-left: 12px !important;
+    border-left: 1px solid var(--vp-c-divider);
+    margin-left: 10px !important;
+}
+
+.VPDocAsideOutline li[data-state="open"] > ul,
+.VPDocAsideOutline li:not([data-state="closed"]):has(.outline-link.active) > ul {
+    display: block !important;
+}
+
+.VPDocAsideOutline .outline-link {
+    display: flex !important;
+    align-items: center;
+    position: relative;
+    padding: 5px 0 5px 28px !important;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.VPDocAsideOutline .outline-link.active {
+    color: var(--vp-c-brand-1) !important;
+}
+
+.VPDocAsideOutline li:has(ul) > .outline-link::before {
+    content: '▶';
+    position: absolute;
+    left: 8px;
+    font-size: 8px;
+    color: var(--vp-c-text-3);
+    transition: transform 0.2s;
+}
+
+.VPDocAsideOutline li[data-state="open"] > .outline-link::before,
+.VPDocAsideOutline li:not([data-state="closed"]):has(.outline-link.active) > .outline-link::before {
+    transform: rotate(90deg);
+    color: var(--vp-c-brand-1);
+}
+
+/* ==========================================
+   7. README & AboutMe 特殊页面
+   ========================================== */
+.readme-page, .aboutme-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 15px;
+    line-height: 1.3;
+}
+
+.readme-page h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.readme-page h1::after {
+    content: '';
+    display: block;
+    width: 260px;
+    height: 1px;
+    background: #4299e1;
+    margin: 12px auto 0;
+}
+
+.readme-page ul {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.readme-page ul li {
+    background: #ffffff;
+    padding: 16px 24px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.readme-page ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.readme-page a {
+    color: #4299e1;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+}
+
+.readme-page a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4299e1;
+    transition: width 0.3s ease;
+}
+
+.readme-page a:hover::after {
+    width: 100%;
+}
+
+html.dark .readme-page ul li {
+    background: #212325;
+}
+
+/* ==========================================
+   8. 全局细节 & 返回顶部
+   ========================================== */
 #back-to-top-fancy {
     position: fixed;
     bottom: 40px;
@@ -219,18 +379,27 @@
     cursor: pointer;
     z-index: 100;
     opacity: 0;
+    transform: translateY(20px);
     transition: all 0.4s ease;
 }
 
 #back-to-top-fancy.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
 .vp-doc h2 {
+    margin: 24px 0 16px;
+    padding-top: 24px;
     border: none;
-    margin-top: 24px;
 }
 
 .vp-doc a {
     text-decoration: none !important;
+}
+
+.vp-doc img {
+    box-shadow: -2px 5px 5px 2px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 5px !important;
+    margin: 20px 0px !important;
 }
