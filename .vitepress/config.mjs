@@ -2,6 +2,7 @@ import {defineConfig} from 'vitepress';
 import {set_sidebar} from './utils/auto_sidebar.mjs';
 
 export default defineConfig({
+    appearance: 'dark',
     lang: 'zh-CN',
     head: [['link', {rel: 'icon', href: '/logo.png'}]],
     title: 'colour008的笔记',
