@@ -1,5 +1,6 @@
 ---
 pageClass: readme-page
+aside: false
 ---
 
 # 分类目录 📑

@@ -1,230 +1,236 @@
-/* 苹方-简 极细体 */
+/* ==========================================
+   1. 字体声明
+   ========================================== */
 @font-face {
-	font-family: 'PingFangSC-Ultralight-woff2';
-	src: url('/fonts/PingFangSC-Ultralight.woff2') format('woff2');
-}
-/* 苹方-简 纤细体 */
-@font-face {
-	font-family: 'PingFangSC-Thin-woff2';
-	src: url('/fonts/PingFangSC-Thin.woff2') format('woff2');
-}
-/* 苹方-简 细体 */
-@font-face {
-	font-family: 'PingFangSC-Light-woff2';
-	src: url('/fonts/PingFangSC-Light.woff2') format('woff2');
-}
-/* 苹方-简 常规体 */
-@font-face {
-	font-family: 'PingFangSC-Regular-woff2';
-	src: url('/fonts/PingFangSC-Regular.woff2') format('woff2');
-}
-/* 苹方-简 中黑体 */
-@font-face {
-	font-family: 'PingFangSC-Medium-woff2';
-	src: url('/fonts/PingFangSC-Medium.woff2') format('woff2');
-}
-/* 苹方-简 中粗体 */
-@font-face {
-	font-family: 'PingFangSC-Semibold-woff2';
-	src: url('/fonts/PingFangSC-Semibold.woff2') format('woff2');
+    font-family: 'PingFangSC-Ultralight-woff2';
+    src: url('/fonts/PingFangSC-Ultralight.woff2') format('woff2');
 }
 
-/* Fira Code 等宽字体 */
 @font-face {
-	font-family: 'Fira Code';
-	src:
-		url('/fonts/FiraCode-Regular.woff2') format('woff2'),
-		url('/fonts/FiraCode-Regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
+    font-family: 'PingFangSC-Thin-woff2';
+    src: url('/fonts/PingFangSC-Thin.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'PingFangSC-Light-woff2';
+    src: url('/fonts/PingFangSC-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'PingFangSC-Regular-woff2';
+    src: url('/fonts/PingFangSC-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'PingFangSC-Medium-woff2';
+    src: url('/fonts/PingFangSC-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'PingFangSC-Semibold-woff2';
+    src: url('/fonts/PingFangSC-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/FiraCode-Regular.woff2') format('woff2'), url('/fonts/FiraCode-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ==========================================
+   2. 基础变量 (Indigo 主色 & Dracula 暗色)
+   ========================================== */
 :root {
-	--vp-c-default-1: var(--vp-c-gray-1);
-	--vp-c-default-2: var(--vp-c-gray-2);
-	--vp-c-default-3: var(--vp-c-gray-3);
-	--vp-c-default-soft: var(--vp-c-gray-soft);
+    --vp-c-brand-1: var(--vp-c-indigo-1);
+    --vp-c-brand-2: var(--vp-c-indigo-2);
+    --vp-c-brand-3: var(--vp-c-indigo-3);
+    --vp-c-brand-soft: var(--vp-c-indigo-soft);
 
-	--vp-c-brand-1: var(--vp-c-indigo-1);
-	--vp-c-brand-2: var(--vp-c-indigo-2);
-	--vp-c-brand-3: var(--vp-c-indigo-3);
-	--vp-c-brand-soft: var(--vp-c-indigo-soft);
+    --vp-font-family-base: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --vp-font-family-mono: 'Fira Code', 'PingFang SC', monospace;
 
-	--vp-c-tip-1: var(--vp-c-brand-1);
-	--vp-c-tip-2: var(--vp-c-brand-2);
-	--vp-c-tip-3: var(--vp-c-brand-3);
-	--vp-c-tip-soft: var(--vp-c-brand-soft);
-
-	--vp-c-warning-1: var(--vp-c-yellow-1);
-	--vp-c-warning-2: var(--vp-c-yellow-2);
-	--vp-c-warning-3: var(--vp-c-yellow-3);
-	--vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-	--vp-c-danger-1: var(--vp-c-red-1);
-	--vp-c-danger-2: var(--vp-c-red-2);
-	--vp-c-danger-3: var(--vp-c-red-3);
-	--vp-c-danger-soft: var(--vp-c-red-soft);
+    /* Dracula 核心变量 */
+    --dracula-bg: #282a36;
+    --dracula-selection: #44475a;
+    --dracula-comment: #6272a4;
 }
 
-/**
- * Component: Button
- * -------------------------------------------------------------------------- */
+/* ==========================================
+   3. Dracula 代码块 & 鼠标移入显示滚动条
+   ========================================== */
 
+/* 容器基础 */
+.vp-doc div[class*="language-"] {
+    background-color: var(--dracula-bg) !important;
+    border-radius: 12px !important;
+    margin: 16px 0 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+}
+
+/* 代码区域：强制横向溢出 */
+.vp-doc [class*="language-"] pre {
+    background-color: transparent !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    overflow-x: auto !important;
+    white-space: pre !important;
+    word-break: normal !important;
+}
+
+/* --- Chrome/Safari/Edge 滚动条逻辑 --- */
+
+/* 1. 默认隐藏滚动条滑块 (透明) */
+.vp-doc [class*="language-"] pre::-webkit-scrollbar-thumb {
+    background-color: transparent !important;
+    border-radius: 10px !important;
+    border: 3px solid transparent !important;
+}
+
+/* 2. 鼠标移入容器时显示滚动条滑块 */
+.vp-doc div[class*="language-"]:hover pre::-webkit-scrollbar-thumb {
+    background-color: var(--dracula-selection) !important;
+    border: 3px solid var(--dracula-bg) !important; /* 制造空隙感 */
+}
+
+/* 3. 鼠标悬停在滑块上时加深颜色 */
+.vp-doc div[class*="language-"] pre::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dracula-comment) !important;
+}
+
+/* 4. 滚动条轨道始终保持一致背景 */
+.vp-doc [class*="language-"] pre::-webkit-scrollbar {
+    height: 12px !important; /* 稍微调宽一点，方便鼠标点击 */
+    display: block !important;
+}
+
+.vp-doc [class*="language-"] pre::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+/* --- Firefox 兼容逻辑 --- */
+.vp-doc [class*="language-"] pre {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent; /* 默认透明 */
+    transition: scrollbar-color 0.3s ease;
+}
+
+.vp-doc div[class*="language-"]:hover pre {
+    scrollbar-color: var(--dracula-selection) transparent;
+}
+
+/* 语言标签与复制按钮 */
+.vp-doc [class*="language-"]::before {
+    color: var(--dracula-comment) !important;
+    top: 10px;
+    right: 15px;
+}
+
+.vp-doc [class*="language-"] .copy {
+    background-color: var(--dracula-selection) !important;
+}
+
+/* ==========================================
+   4. 侧边栏及其他布局 (保持原有逻辑)
+   ========================================== */
 :root {
-	--vp-button-brand-border: transparent;
-	--vp-button-brand-text: var(--vp-c-white);
-	--vp-button-brand-bg: var(--vp-c-brand-3);
-	--vp-button-brand-hover-border: transparent;
-	--vp-button-brand-hover-text: var(--vp-c-white);
-	--vp-button-brand-hover-bg: var(--vp-c-brand-2);
-	--vp-button-brand-active-border: transparent;
-	--vp-button-brand-active-text: var(--vp-c-white);
-	--vp-button-brand-active-bg: var(--vp-c-brand-1);
+    --vp-sidebar-width: 420px;
+    --vp-layout-max-width: 1600px;
+    --vp-nav-height: 64px;
 }
 
-/**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
-:root {
-	--vp-home-hero-name-color: transparent;
-	--vp-home-hero-name-background: -webkit-linear-gradient(
-		120deg,
-		#bd34fe 30%,
-		#41d1ff
-	);
-
-	--vp-home-hero-image-background-image: linear-gradient(
-		-45deg,
-		#bd34fe 50%,
-		#47caff 50%
-	);
-	--vp-home-hero-image-filter: blur(44px);
+.VPSidebar {
+    background-color: transparent !important;
 }
 
-@media (min-width: 640px) {
-	:root {
-		--vp-home-hero-image-filter: blur(56px);
-	}
+.VPSidebarItem.level-1 .items {
+    border-left: 1px solid var(--vp-c-divider) !important;
+    padding-left: 0 !important;
 }
 
+.VPSidebarItem .link {
+    display: flex !important;
+    margin-left: -1px !important;
+    border-left: 1px solid transparent !important;
+    font-size: 13px;
+    color: var(--vp-c-text-2) !important;
+    transition: all 0.25s ease !important;
+    border-right: solid 1px #cbcbcb !important;
+    padding-right: 25px !important;
+}
+
+.VPSidebarItem .link:hover {
+    background-color: var(--vp-c-brand-soft) !important;
+    color: var(--vp-c-brand-1) !important;
+    border-left-color: var(--vp-c-brand-2) !important;
+    padding-left: 10px !important;
+}
+
+.VPSidebarItem .link.active {
+    background-color: var(--vp-c-brand-soft) !important;
+    color: var(--vp-c-brand-1) !important;
+    border-left-color: var(--vp-c-brand-1) !important;
+    font-weight: 600 !important;
+}
+
+/* 响应式对齐 */
 @media (min-width: 960px) {
-	:root {
-		--vp-home-hero-image-filter: blur(68px);
-	}
+    .VPDoc .container {
+        display: flex !important;
+        justify-content: flex-start !important;
+        max-width: 100% !important;
+    }
+
+    .VPDoc .content {
+        padding: 8px 30px 60px !important;
+        max-width: 100% !important;
+    }
 }
 
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
+@media (min-width: 1280px) {
+    .VPDoc.has-aside .content-container {
+        max-width: calc(100vw - var(--vp-sidebar-width) - 340px) !important;
+    }
 
-:root {
-	--vp-custom-block-tip-border: transparent;
-	--vp-custom-block-tip-text: var(--vp-c-text-1);
-	--vp-custom-block-tip-bg: var(--vp-c-brand-soft);
-	--vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
-}
-
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
-
-.DocSearch {
-	--docsearch-primary-color: var(--vp-c-brand-1) !important;
+    .aside-container {
+        width: 300px !important;
+        position: fixed;
+        top: 0;
+        padding-top: calc(var(--vp-nav-height) + 20px) !important;
+        height: 100vh;
+    }
 }
 
-/**自定义侧边栏在最左边，右边撑满宽度*/
-.VPDoc .container {
-	margin: 0 !important;
-}
-@media (min-width: 960px) {
-	.VPDoc:not(.has-sidebar) .content {
-		max-width: 1552px !important;
-	}
-}
-.VPDoc.has-aside .content-container {
-	max-width: 1488px !important;
-}
-@media (min-width: 960px) {
-	.VPDoc:not(.has-sidebar) .container {
-		display: flex;
-		justify-content: center;
-		max-width: 1562px !important;
-	}
-}
-.aside-container {
-	position: fixed;
-	top: 0;
-	padding-top: calc(
-		var(--vp-nav-height) + var(--vp-layout-top-height, 0px) +
-			var(--vp-doc-top-height, 0px) + 10px
-	) !important;
-	width: 224px;
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-	scrollbar-width: none;
+/* 返回顶部样式 */
+#back-to-top-fancy {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+    background: var(--vp-c-bg);
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.4s ease;
 }
 
-/* 自定义h2的间距 */
+#back-to-top-fancy.visible {
+    opacity: 1;
+}
+
 .vp-doc h2 {
-	margin: 0px 0 16px;
-	padding-top: 24px;
-	border: none;
+    border: none;
+    margin-top: 24px;
 }
 
-/* 去掉所有链接的下划线 */
 .vp-doc a {
-	text-decoration: none !important;
-}
-
-/* 使用自定义字体 */
-:root {
-	--vp-font-family-base:
-		'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		sans-serif;
-
-	--vp-font-family-mono:
-		'Fira Code', 'PingFang SC', 'Courier New', Courier, monospace;
-}
-
-/* 核心：仅针对 shiki + vp-code 类的 pre 标签，强制溢出显示滚动条 */
-pre.shiki.shiki-themes.github-light.github-dark.vp-code {
-	/* 1. 确保内容溢出时触发滚动，且不换行 */
-	white-space: pre !important;
-	word-break: keep-all !important;
-	overflow-x: auto !important;
-	/* 2. 预留滚动条空间，避免内容跳动 */
-	scrollbar-gutter: stable both-edges !important;
-	/* 3. 基础布局保障 */
-	width: 100% !important;
-	min-width: fit-content !important;
-	box-sizing: border-box !important;
-}
-
-/* ========== Chrome/Safari/WebKit 浏览器：强制显示滚动条 ========== */
-pre.shiki.shiki-themes.github-light.github-dark.vp-code::-webkit-scrollbar {
-	height: 8px !important; /* 关键：设置高度，避免WebKit隐藏 */
-	display: block !important;
-	opacity: 1 !important;
-}
-
-pre.shiki.shiki-themes.github-light.github-dark.vp-code::-webkit-scrollbar-thumb {
-	background-color: #999 !important; /* 非交互时可见的灰色 */
-	border-radius: 4px !important;
-}
-
-pre.shiki.shiki-themes.github-light.github-dark.vp-code::-webkit-scrollbar-track {
-	background-color: #f5f5f5 !important; /* 轨道背景，提示可滚动 */
-}
-
-/* ========== Firefox 浏览器 ========== */
-pre.shiki.shiki-themes.github-light.github-dark.vp-code {
-	scrollbar-width: thin !important; /* 强制显示细滚动条 */
-	scrollbar-color: #999 #f5f5f5 !important;
-}
-
-/* ========== Windows/Edge 浏览器 ========== */
-pre.shiki.shiki-themes.github-light.github-dark.vp-code {
-	-ms-overflow-style: scrollbar !important; /* 禁用沉浸式滚动条 */
+    text-decoration: none !important;
 }
