@@ -428,7 +428,6 @@ pre.shiki {
     display: flex;
     justify-content: center; /* 水平居中 */
     align-items: center;     /* 垂直居中（处理图标高度不一的情况） */
-    gap: 10px;               /* 替代 &nbsp;，设置图标间距 */
 }
 
 html.dark .readme-page ul li {
